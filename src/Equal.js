@@ -4,7 +4,7 @@ class Equal {
     this.val2 = val2
   }
 
-  checkEqual() {
+  checkValues() {
     return this.val1 === this.val2
   }
 }

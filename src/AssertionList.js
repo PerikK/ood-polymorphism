@@ -6,15 +6,19 @@ class AssertionList {
     this.assertions = assertions
   }
 
+  // checkAll() {
+  //   return this.assertions.every(assertion => {
+  //     if (assertion instanceof Equal) {
+  //       return assertion.checkEqual()
+  //     } else if (assertion instanceof Include) {
+  //       return assertion.checkInclude()
+  //     }
+  //   })
+  // }
   checkAll() {
-    return this.assertions.every(assertion => {
-      if (assertion instanceof Equal) {
-        return assertion.checkEqual()
-      } else if (assertion instanceof Include) {
-        return assertion.checkInclude()
-      }
-    })
+    return this.assertions.every(assertion => assertion.checkValues())
   }
+
 }
 
 module.exports = AssertionList
